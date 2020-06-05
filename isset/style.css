@@ -1,0 +1,188 @@
+/*tipografias*/
+
+@font-face {
+    font-family: "eli";
+    src: url(../isset/Charnego.otf);
+}
+
+@font-face {
+    font-family: "eli0";
+    src: url(../isset/DisplaySt.ttf);
+}
+
+@font-face {
+    font-family: "eli1";
+    src: url(../isset/Simply\ Rounded.ttf);
+}
+
+@font-face {
+    font-family: "eli2";
+    src: url(../isset/Hiroshima\ gyoshi.otf);
+}
+
+
+/*header*/
+
+a {
+    text-decoration: none!important;
+}
+
+.titulo {
+    font-family: "eli";
+    color: #252106;
+    font-size: 70px;
+    text-shadow: 0px 2px 1px #222222;
+    text-shadow: 2px 2px 4px #000000;
+    text-decoration: none;
+}
+
+.titulo:hover {
+    text-shadow: #000000 1px 1px 0px, #f18f84 2px 2px 0px, #000000 3px 3px 0px, #f18f84 4px 4px 0px, #000000 5px 5px 0px, #f18f84 6px 6px 0px, #000000 7px 7px 0px, #f18f84 8px 8px 0px, #000000 9px 9px 0px, #f18f84 10px 10px 0px, #000000 11px 11px 0px, #f18f84 12px 12px 0px, #000000 13px 13px 0px, #f18f84 14px 14px 0px, #000000 15px 15px 0px;
+}
+
+.espacio {
+    margin: 10px;
+    padding: 10px;
+}
+
+
+/*nav*/
+
+.espacio a {
+    color: #6a2b9a!important;
+}
+
+.bloquesdiv {
+    margin-right: 15px;
+    padding: 5px;
+}
+
+.bloquesdiv a {
+    font-family: "eli0";
+}
+
+.icono {
+    font-size: 27px;
+    color: #1d4165;
+    padding-right: 4px;
+}
+
+.tooltipedu {
+    position: relative;
+}
+
+.tooltipedu .tooltiptextedu {
+    visibility: hidden;
+    font-size: 20px;
+    padding: 4px;
+    width: auto;
+    background-color: #f7e5c5;
+    opacity: 0.6;
+    color: #222222;
+    text-align: center;
+    border-radius: 6px;
+    /* Position the tooltip */
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    z-index: 1;
+}
+
+.tooltipedu:hover .tooltiptextedu {
+    visibility: visible;
+}
+
+
+/*aside*/
+
+
+/*form*/
+
+.login {
+    font-family: "eli1";
+    text-shadow: -5px -5px 5px #aaa;
+}
+
+.texto {
+    display: block;
+    color: #222;
+    width: 99%;
+    text-align: center;
+    padding-top: 13px;
+    padding-bottom: 0px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 2px solid #01B1EA;
+}
+
+
+/*roles y gestion*/
+
+.link_aside {
+    width: 75%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 20px;
+    margin-top: 10px;
+    padding-right: 7px;
+}
+
+.link_aside li {
+    padding-bottom: 20px;
+}
+
+.link_aside a {
+    color: #01172d !important;
+    border-bottom: 2px solid #8aafbb;
+    text-decoration: none!important;
+}
+
+
+/*menu central*/
+
+.espacio1 {
+    margin-bottom: 14px;
+    padding-bottom: 7px;
+}
+
+.producto {
+    width: 30%;
+    margin-left: 5px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.div_img {
+    margin-top: 5px;
+    width: 170px;
+    /*height: 170px*/
+    height: 190px;
+}
+
+.articulos {
+    height: auto;
+    width: 100%;
+    word-wrap: break-word;
+    background-color: #eee;
+    overflow: visible;
+}
+
+
+/*.img_carrito {
+    height: 80px;
+    display: block;
+    margin: 10px auto;
+}*/
+
+
+/*footer*/
+
+.letra {
+    font-family: "eli2";
+    font-size: 45px;
+    margin: 20px;
+    text-shadow: 3px 3px 5px #dc7171, 6px 6px 5px #38b9b4, 9px 9px 5px #12a238;
+}

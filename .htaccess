@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+#este trozo de codigo debes de tener habilitado el rewrite mudule de apache para tenr una url friendly
+
+#activar rewrite
+
+RewriteEngine on
+ErrorDocument 404 http://localhost/Portafolio_backend/web/proyecto_poo/error/
+
+#para condicional para crear directorio o archivos (directorio, file)
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+#sintaxy para escribir un controlador y un metodo de manera amigable en la barra de url
+RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+
+</IfModule>
