@@ -1,5 +1,5 @@
 <?php
-//archivo del modelo usuarios en donde se les envia los metodos ala class usuario
+//archivo de modelo usuarios.php en donde se les envia los metodos ala class usuario
 require_once 'modelo/usuarios.php';
 
 class usuarioController {

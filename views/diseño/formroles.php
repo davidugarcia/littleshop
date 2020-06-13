@@ -26,7 +26,7 @@
          </div>
       </div>
 
-      <button type="submit" class="btn btn-primary espacio">Enviar</button>
+      <button type="submit" class="btn btn-primary espacio">Ingresar</button>
 
    </form>
                     
@@ -46,3 +46,5 @@
          
 <!--pedidos y articulos-->
 <div class="col-lg-8">
+
+  

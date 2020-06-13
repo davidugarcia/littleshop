@@ -1,6 +1,6 @@
-         <h1 class="titulo espacio1">Pedidos</h1>
+      <h1 class="titulo espacio1 text-center">Pedidos</h1>
 
-         <div class="d-flex flex-wrap">
+      <div class="d-flex flex-wrap justify-content-around">
 
             <div class="card border border-success producto">
                <img src="<?=base_url?>isset/camiseta.png" class="card-img-top div_img" alt="...">
@@ -39,4 +39,4 @@
                   nnfuihguerhjguhejrughurehjujjhijgihjigfjjgihjijhijyt</p>
             </article>
             
-         </div>
+      </div>
