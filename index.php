@@ -1,12 +1,13 @@
 <?php
+//se utiliza para asociar toda la variables de session con todo los archivos que esta en el archivo index
 session_start();
-//autocarga controladores
+//autocarga de los archivos controladores que contienens la clase y el metodo a utilizar
 require_once 'autoload.php';
-//conexion con base de datos
+//conexion con base de datos my tienda
 require_once 'confg/basedatos.php';
-//para utilizar el parametro url_base en las vsitas y cargar los estilos 
+//define un trozo de la url como estatica y sino no carga un controlador carga otro por default.
 require_once 'confg/parametros.php';
-//vistas de headernav y formroles
+//visitas de header y formroles
 require_once 'views/diseño/header.php';
 require_once 'views/diseño/formroles.php';
 
@@ -37,7 +38,7 @@ if(class_exists($nombre_controlador)){
 	if(isset($_GET['action']) && method_exists($controlador, $_GET['action'])){
 		//almacenar el metodo 
 		$action = $_GET['action'];
-		//con la instacia llamar el metodo que se creo
+		//con la instacia llama el metodo que se creo
 		$controlador->$action();
 	}elseif(!isset($_GET['controller']) && !isset($_GET['action'])){
 		//cuando no existe el controlador y el metodo coloca por default 
@@ -52,5 +53,4 @@ if(class_exists($nombre_controlador)){
 }
 
 //vista footer
-
 require_once 'views/diseño/footer.php';

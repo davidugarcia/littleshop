@@ -5,10 +5,12 @@ require_once 'modelo/usuarios.php';
 class usuarioController {
 
    public function registro(){
+    //renderiza la vista de registro.php 
     require_once "views/usuario/registro.php";
    }
 
    public function guardar(){
+     //metodo para guardar datos en la database mytienda
       if(isset($_POST)){
 
         $nombre = isset($_POST['name']) ? $_POST['name'] : false;
@@ -18,16 +20,18 @@ class usuarioController {
 
         if($nombre && $apellidos && $email && $password){
               //instancia o objeto creado con la clase usuario del archivo modelo/usuarios.php
-              $usuario = new Usuario();
-              //metodo de la clase usuario del archivo modelo/usuarios.php
+              $usuario = new usuario();
+              //ntancias creada con los metodos de la clase usuario del archivo modelo/usuarios.php
               $usuario->setnombre($nombre);
               $usuario->setapellido($apellidos);
               $usuario->setcorreo($email);
               $usuario->setcontraseña($password);
 
+              //la instacia guardar() regresa true si la database inserto los datos luego lo alacena en la variable $save
               $save = $usuario->guardar();
             
-              if($save){               
+              if($save){        
+                // se crea estas variables de seccion       
                 $_SESSION['register'] = "complete";
               }else{
                 $_SESSION['register'] = "failed1";
@@ -38,6 +42,7 @@ class usuarioController {
       }else{
         $_SESSION['register'] = "failed2";
       }
+     //te redirecciona ala controlador usuario/registro que contiene la vista registro.php
      header("Location:".base_url.'usuario/registro');
     }
 

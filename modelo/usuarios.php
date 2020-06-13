@@ -13,6 +13,7 @@ class usuario {
 
    //contructor para utilizar el metodo conectar de la base de datos.
    //este metodo se utilizara enlos archivos donde se requiera conectarse ala database
+   // el metodo conectar regresa el valor true si existe la conexion
    public function __construct(){
       $this->conexion = Database::conectar();
    }
