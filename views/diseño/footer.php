@@ -1,10 +1,8 @@
-
+      </div>
    </div>
 
-</div>
-
 <!--footer-->
-<div class="container">
+
    <div class="row">
       <div class="col-lg-12 mb-2">
          <div class="d-flex justify-content-center">
@@ -16,7 +14,6 @@
       </div>
    </div>
 </div>
-
 
 <!--Boostraps JS-->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

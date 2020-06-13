@@ -23,7 +23,7 @@
 
    <div class="container">
 
-      <!--cabecera-->
+      <!--header-->
       <header>
          <div class="text-center">
             <a href="index.php">
@@ -36,6 +36,7 @@
       <div class="row">
          <div class="col-lg-12">
             <nav class="navbar navbar-light">
+               <!--nav letras-->
                <div class="espacio nav">
 
                   <a class="nav-link active" href="#">Active</a>
@@ -45,7 +46,7 @@
 
                </div>
 
-               <!--Iconos-->
+               <!--nav iconos-->
                <div class="nav">
 
                   <div class="bloquesdiv"> <a class="divbar-brand" href="#">
@@ -66,15 +67,15 @@
             </nav>
          </div>
       </div>
+
    </div>
 
-   <!--menu principal-->
+   <!--aside-->
+   <!--form y roles-->
    <div class="container">
 
       <div class="row">
-         <!--aside-->
-         <!--form y roles-->
-
+        
          <div class="col-lg-4">
 
             <div class="texto">
@@ -122,7 +123,7 @@
 
          </div>
 
-         <!--pedidos y articulos-->
+         <!--menu principal de objectos-->
          <div class="col-lg-8">
 
             <header>
@@ -169,6 +170,7 @@
                      jfehfhuhfuhudhgfuirehjgfiurheuhgiurehjgihrugh
                      nnfuihguerhjguhejrughurehjujjhijgihjigfjjgihjijhijyt</p>
                </article>
+
             </div>
 
          </div>

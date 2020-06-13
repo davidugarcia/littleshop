@@ -1,10 +1,4 @@
-      <div class="col-lg-8">
-
-         <header>
-            <div class="text-center">
-               <h1 class="titulo espacio1">Pedidos</h1>
-            </div>
-         </header>
+         <h1 class="titulo espacio1">Pedidos</h1>
 
          <div class="d-flex flex-wrap">
 
@@ -44,6 +38,5 @@
                   jfehfhuhfuhudhgfuirehjgfiurheuhgiurehjgihrugh
                   nnfuihguerhjguhejrughurehjujjhijgihjigfjjgihjijhijyt</p>
             </article>
+            
          </div>
-
-      </div>
