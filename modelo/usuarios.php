@@ -1,6 +1,6 @@
 <?php
 
-class usuario {
+class usuario extends database{
 
    private $id;
    private $nombre;
@@ -15,7 +15,7 @@ class usuario {
    //este metodo se utilizara enlos archivos donde se requiera conectarse ala database
    // el metodo conectar regresa el valor true si existe la conexion
    public function __construct(){
-      $this->conexion = Database::conectar();
+      $this->conexion = parent::conectar();
    }
 
    function setid($identify){
