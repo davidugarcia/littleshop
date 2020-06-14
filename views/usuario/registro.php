@@ -6,10 +6,13 @@
       <?php if(isset($_SESSION['register']) && $_SESSION['register'] == 'complete'): ?>
       <div class="alert alert-success" role="alert">Registro completado correctamente</div>
       <?php elseif(isset($_SESSION['register']) && $_SESSION['register'] == 'failed'): ?>
-      <div class="">Registro fallido, introduce bien los datos</div>
+      <div class="alert alert-danger" role="alert">Registro fallido, introduce bien los datos</div>
       <?php endif; ?>
+      
    </div>
 
+   <?php //trozo de codigo para borrar la sesion creada por register 
+   Utilidades::borrarSession('register'); ?>
 
    <form action="<?=base_url?>usuario/guardar" method="POST" style="width:280px;">
 

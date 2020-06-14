@@ -7,6 +7,8 @@ require_once 'autoload.php';
 require_once 'confg/basedatos.php';
 //define un trozo de la url como estatica y sino no carga un controlador carga otro por default.
 require_once 'confg/parametros.php';
+//utilidades
+require_once 'helper/utility.php';
 //visitas de header y formroles
 require_once 'views/diseño/header.php';
 require_once 'views/diseño/formroles.php';
