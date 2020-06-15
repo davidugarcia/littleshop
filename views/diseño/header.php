@@ -3,10 +3,10 @@
 
 <head>
 
-   <meta charset="UTF-8"/>
+   <meta charset="UTF-8" />
    <title>Tienda</title>
    <link rel="stylesheet" href="<?=base_url?>isset/styles.css">
-   
+
    <!--fontawesome-->
    <script defer src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"
       integrity="sha384-ukiibbYjFS/1dhODSWD+PrZ6+CGCgf8VbyUH7bQQNUulL+2r59uGYToovytTf4Xm" crossorigin="anonymous">
@@ -17,8 +17,9 @@
    </script>
 
 </head>
+
 <body>
-   
+
    <div class="container">
       <!--header-->
       <header>
@@ -28,7 +29,7 @@
             </a>
          </div>
       </header>
-      
+
       <!--nav-->
       <div class="row">
          <div class="col-lg-12">
@@ -65,9 +66,3 @@
       </div>
 
       <div class="row">
-   
-
-   
-
-
-   

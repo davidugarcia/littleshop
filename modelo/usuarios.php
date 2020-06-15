@@ -17,7 +17,7 @@ class usuario extends database{
    public function __construct(){
       $this->conexion = parent::conectar();
    }
-
+   // metodos de set
    function setid($identify){
       $this->id = $identify;
    }
@@ -45,7 +45,9 @@ class usuario extends database{
    function setimagen($img){
       $this->imagen = $img;
    }
-   //-----------------------------------------------------------------------
+
+   //metodos get
+
    function getid(){
      return  $this->id;
    }
@@ -73,9 +75,10 @@ class usuario extends database{
     function getimagen(){
       return  $this->imagen;
     }
-   //---------------------------------------------------------------------------------
+    
+   //insertar registros en la tabla usuario de la basde de datos mytienda  
    public function guardar(){
-      $sql = "INSERT INTO usuarios VALUES(NULL, '{$this->getnombre()}', '{$this->getapellido()}', '{$this->getcorreo()}', '{$this->getcontraseña()}', 'user', null);";
+      $sql = "INSERT INTO usuarios VALUES(NULL, '{$this->getnombre()}', '{$this->getapellido()}', '{$this->getcorreo()}', '{$this->getcontraseña()}', 'admin', null);";
       $registrar = $this->conexion->query($sql);
 
       $result = false;
@@ -83,5 +86,32 @@ class usuario extends database{
 			$result = true;
 		}
 		return $result;
+   }
+
+   //inisiciar sesion mediante un usuario existente en la basae de daros mytienda
+   public function registrate(){
+      $result = false;
+		$email = $this->email;
+		$password = $this->password;
+		
+		// Comprobar si existe el usuario
+		$sql = "SELECT * FROM usuarios WHERE email = '$email'";
+		$login = $this->conexion->query($sql);
+		
+		
+		if($login && $login->num_rows == 1){
+			$usuario = $login->fetch_object();
+			
+         // Verificar la contraseña
+         //primer parametro el que recibe por post, sugundo parametro es el hash nombre del la entidad password de la database
+			$verify = password_verify($password, $usuario->password);
+			
+			if($verify){
+				$result = $usuario;
+			}
+		}
+		
+		return $result;
+
    }
 }

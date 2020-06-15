@@ -43,7 +43,37 @@ class usuarioController {
         $_SESSION['register'] = "failed2";
       }
      //te redirecciona ala controlador usuario/registro que contiene la vista registro.php
-     header("Location:".base_url.'usuario/registro');
-    }
+    header("Location:".base_url.'usuario/registro');
+    exit;
+  }
+
+  public function ingresar(){
+
+      if(isset($_POST)){
+        // Identificar al usuario
+        // Consulta a la base de datos
+        $usuario = new usuario();
+        $usuario->setcorreo($_POST['email']);
+        $usuario->setcontraseña($_POST['pass']);
+        
+        $identity = $usuario->registrate();
+
+        //var_dump($identity);
+        //die();
+        
+        if($identity && is_object($identity)){
+          $_SESSION['identity'] = $identity;
+          
+          if($identity->rol == 'admin'){
+            $_SESSION['admin'] = true;
+          }
+          
+        }else{
+          $_SESSION['error_login'] = 'Identificación fallida !!';
+        }
+      
+      }
+      header("Location:".base_url);
+  }
 
 }

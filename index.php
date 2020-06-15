@@ -22,7 +22,6 @@ function show_error(){
 if(isset($_GET['controller'])){
 	//para obtener nombre del controlardo = el nombre de la clase junto ala palabra concatenada Controller
 	$nombre_controlador = $_GET['controller'].'Controller';
-
 }elseif(!isset($_GET['controller']) && !isset($_GET['action'])){
 	//cuando no existe el controlador y el metodo coloca por default 
 	//un contorlador ---- cong/parametro.php
