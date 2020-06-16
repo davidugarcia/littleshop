@@ -44,7 +44,7 @@ class usuarioController {
       }
      //te redirecciona ala controlador usuario/registro que contiene la vista registro.php
     header("Location:".base_url.'usuario/registro');
-    exit;
+    
   }
 
   public function ingresar(){
@@ -75,5 +75,17 @@ class usuarioController {
       }
       header("Location:".base_url);
   }
+
+  public function cerrarsesion(){
+		if(isset($_SESSION['identity'])){
+			unset($_SESSION['identity']);
+		}
+		
+		if(isset($_SESSION['admin'])){
+			unset($_SESSION['admin']);
+		}
+		
+		header("Location:".base_url);
+	}
 
 }
