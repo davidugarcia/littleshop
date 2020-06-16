@@ -47,7 +47,7 @@
                <!--Iconos de nav-->
                <div class="nav">
 
-                  <div class="bloquesdiv"> <a class="divbar-brand" href="#">
+                  <div class="bloquesdiv"><a class="divbar-brand" href="#">
                         <span class="icono"><i class="fas fa-robot"></i>ELIEZER</span></a>
                   </div>
                   <div class="bloquesdiv"><a href="" class="icono tooltipedu">

@@ -43,8 +43,9 @@ class usuarioController {
         $_SESSION['register'] = "failed2";
       }
      //te redirecciona ala controlador usuario/registro que contiene la vista registro.php
-    header("Location:".base_url.'usuario/registro');
-    
+    //header("Location:".base_url.'usuario/registro');
+    echo '<script>window.location= "'.base_url.'usuario/registro"</script>';
+    //exit();
   }
 
   public function ingresar(){
@@ -73,19 +74,20 @@ class usuarioController {
         }
       
       }
-      header("Location:".base_url);
+    //header("Location:".base_url);
+    echo '<script>window.location= "'.base_url.'"</script>';
   }
 
   public function cerrarsesion(){
-		if(isset($_SESSION['identity'])){
-			unset($_SESSION['identity']);
-		}
-		
-		if(isset($_SESSION['admin'])){
-			unset($_SESSION['admin']);
-		}
-		
-		header("Location:".base_url);
+      if(isset($_SESSION['identity'])){
+        unset($_SESSION['identity']);
+      }
+      
+      if(isset($_SESSION['admin'])){
+        unset($_SESSION['admin']);
+      }
+    //header("Location:".base_url);
+    echo '<script>window.location= "'.base_url.'"</script>';
 	}
 
 }
