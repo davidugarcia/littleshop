@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
-   <meta charset="UTF-8"/>
+   <meta charset="UTF-8" />
    <title>Tienda</title>
    <link rel="stylesheet" href="<?=base_url?>isset/styles.css">
 
@@ -19,8 +19,8 @@
 </head>
 
 <body>
-
    <div class="container">
+
       <!--header-->
       <header>
          <div class="text-center">
@@ -57,7 +57,7 @@
                         <i class="fab fa-whatsapp"></i><span class="tooltiptextedu">numero</span></a>
                   </div>
                   <div class="bloquesdiv"><a href="" class="icono tooltipedu">
-                     <i class="fas fa-at"></i><span class="tooltiptextedu">correo</span></a>
+                        <i class="fas fa-at"></i><span class="tooltiptextedu">correo</span></a>
                   </div>
 
                </div>
