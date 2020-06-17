@@ -35,12 +35,12 @@ class usuarioController {
         }else{
           $_SESSION['register'] = "failed1";
         }
-        }else{
-			  	$_SESSION['register'] = "failed";
-			  }
       }else{
-        $_SESSION['register'] = "failed2";
-      }
+			  $_SESSION['register'] = "failed";
+			}
+    }else{
+      $_SESSION['register'] = "failed2";
+    }
     //te redirecciona ala controlador usuario/registro que contiene la vista registro.php
     //header("Location:".base_url.'usuario/registro');
     echo '<script>window.location= "'.base_url.'usuario/registro"</script>';
@@ -64,10 +64,10 @@ class usuarioController {
         if($identity->rol == 'admin'){
           $_SESSION['admin'] = true;
         }       
-        }else{
-          $_SESSION['error_login'] = 'Identificación fallida !!';
-        }
+      }else{
+        $_SESSION['error_login'] = 'Identificación fallida !!';
       }
+    }
     //header("Location:".base_url);
     echo '<script>window.location= "'.base_url.'"</script>';
   }

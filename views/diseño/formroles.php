@@ -33,14 +33,20 @@
    <?php endif; ?>
 
    <div class="row d-flex justify-content-center">
+      <?php if(isset($_SESSION['admin'])): ?>
       <div class="link_aside">
          <ul class="fa-ul">
-            <li><a href=""><span class="fa-li"><i class="fas fa-user-circle"></i></span>Mis pedidos</a></li>
+            <li><a href=""><span class="fa-li"><i class="fas fa-user-circle"></i></span>Gestionar productos</a></li>
             <li><a href=""><span class="fa-li"><i class="fas fa-id-badge"></i></span>Gestionar categorias</a></li>
             <li><a href=""><span class="fa-li"><i class="fas fa-user-cog"></i></span>Gestionar pedidos</a></li>
+            <?php endif; ?>
+
+            <?php if(isset($_SESSION['identity'])): ?>
+            <li><a href=""><span class="fa-li"><i class="fas fa-user-circle"></i></span>Mis pedidos</a></li>
             <li><a href="<?=base_url?>usuario/cerrarsesion">cerrar sesion</a></li>
          </ul>
       </div>
+      <?php endif; ?>
    </div>
 </div>
 
