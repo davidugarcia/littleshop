@@ -1,6 +1,7 @@
 <?php
 
 class Categoria{
+
 	private $id;
 	private $nombre;
    private $conexion;
@@ -25,8 +26,21 @@ class Categoria{
    }
    
    public function gettodo() {
+		//consultar todas las categorias de la tabla categorias en la database
 		$categorias = $this->conexion->query("SELECT * FROM categorias ORDER BY id DESC;");
 		return $categorias;
    }
+
+   public function guardarcateg(){
+		//inserta categorias en la tabla de la database
+		$sql = "INSERT INTO categorias VALUES(NULL, '{$this->getname()}');";
+		$save = $this->conexion->query($sql);
+		
+		$result = false;
+		if($save){
+			$result = true;
+		}
+		return $result;
+	}
    
 }

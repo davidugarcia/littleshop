@@ -1,7 +1,7 @@
 <h1 class="text-center pb-">Gestionar Categorias</h1>
 
 <article class="text-center py-1">
-   <a href="<?=base_url?>categoria/crear" type="button" class="btn btn-outline-dark">
+   <a href="<?=base_url?>categorias/crearcat" type="button" class="btn btn-outline-dark">
       Crear categoria
    </a>
 </article>
