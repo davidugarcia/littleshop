@@ -34,8 +34,9 @@
       <div class="row">
          <div class="col-lg-12">
             <nav class="navbar navbar-light">
-
+               <!--Letras-->
                <ul class="nav nav-pills">
+               
                   <li class="nav-item">
                      <a class="nav-link active" href="#">Inicio</a>
                   </li>
@@ -52,25 +53,23 @@
                   </li>
                </ul>
 
-                  <!--Letras-->
+               <!--Iconos de nav-->
+               <div class="nav">
 
-                  <!--Iconos de nav-->
-                  <div class="nav">
-
-                     <div class="bloquesdiv"><a class="divbar-brand" href="#">
-                           <span class="icono"><i class="fas fa-robot"></i>ELIEZER</span></a>
-                     </div>
-                     <div class="bloquesdiv"><a href="" class="icono tooltipedu">
-                           <i class="fab fa-github-alt"></i><span class="tooltiptextedu">cuenta</span></a>
-                     </div>
-                     <div class="bloquesdiv"><a href="" class="icono tooltipedu">
-                           <i class="fab fa-whatsapp"></i><span class="tooltiptextedu">numero</span></a>
-                     </div>
-                     <div class="bloquesdiv"><a href="" class="icono tooltipedu">
-                           <i class="fas fa-at"></i><span class="tooltiptextedu">correo</span></a>
-                     </div>
-
+                  <div class="bloquesdiv"><a class="divbar-brand" href="#">
+                        <span class="icono"><i class="fas fa-robot"></i>ELIEZER</span></a>
                   </div>
+                  <div class="bloquesdiv"><a href="" class="icono tooltipedu">
+                        <i class="fab fa-github-alt"></i><span class="tooltiptextedu">cuenta</span></a>
+                  </div>
+                  <div class="bloquesdiv"><a href="" class="icono tooltipedu">
+                        <i class="fab fa-whatsapp"></i><span class="tooltiptextedu">numero</span></a>
+                  </div>
+                  <div class="bloquesdiv"><a href="" class="icono tooltipedu">
+                        <i class="fas fa-at"></i><span class="tooltiptextedu">correo</span></a>
+                  </div>
+
+               </div>
             </nav>
          </div>
       </div>

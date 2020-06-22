@@ -30,9 +30,9 @@
       <?php if(isset($_SESSION['admin'])): ?>
          <div class="link_aside">
             <ul class="fa-ul">
-               <li><a href="<?=base_url?>"><span class="fa-li"><i class="fas fa-user-circle"></i></span>Gestionar productos</a></li>
+               <li><a href="<?=base_url?>producto/gestionproduct"><span class="fa-li"><i class="fas fa-user-circle"></i></span>Gestionar productos</a></li>
                <li><a href="<?=base_url?>categorias/crearcat"><span class="fa-li"><i class="fas fa-id-badge"></i></span>Gestionar categorias</a></li>
-               <li><a href="<?=base_url?>"><span class="fa-li"><i class="fas fa-user-cog"></i></span>Gestionar pedidos</a>
+               <li><a href="<?=base_url?>"><span class="fa-li"><i class="fas fa-user-cog"></i></span>Gestionar Pedidos</a>
                </li>
                <?php endif; ?>
 

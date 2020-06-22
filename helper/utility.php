@@ -13,8 +13,9 @@ class Utilidades{
 		return $name;
 	}
 	
-	//montrar la vista dependiendo de si existe o no variable de sesion
+	//montrar la vista dependiendo de si existe o no variable de sesion como admin o usuario
 	public static function esAdministrador(){
+
 		if(!isset($_SESSION['admin'])){
 			//header("Location:".base_url);
 			//si no esxiste esa variable global redireccionar a url default
@@ -22,7 +23,7 @@ class Utilidades{
 		}else{
 			//si existe admin
 			return true;
-		}
+		}	
 	}
 	
 	public static function mostrarcat(){
