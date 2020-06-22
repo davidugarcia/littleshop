@@ -98,7 +98,7 @@ class productos {
    }
 
    public function guardar(){
-      $sql = "INSERT INTO productos VALUES(NULL, '{$this->get_catid()}', '{$this->get_name()}', '{$this->get_descrip()}', {$this->get_precio()}, {$this->get_stock()}, NULL, CURDATE(), NULL);";
+      $sql = "INSERT INTO productos VALUES(NULL, '{$this->get_catid()}', '{$this->get_name()}', '{$this->get_descrip()}', {$this->get_precio()}, {$this->get_stock()}, NULL, CURDATE(), '{$this->get_img()}');";
       $registrar = $this->conexion->query($sql);
 
       $result = false;

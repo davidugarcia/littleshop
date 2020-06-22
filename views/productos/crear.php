@@ -52,8 +52,8 @@
 
       <div class="col-md-8 mb-3">
          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile">
-            <label class="custom-file-label" for="validatedInputGroupCustomFile">Cargar imagen...</label>
+            <input type="file" name="imagen" class="custom-file-input" id="imagen" required/>
+            <label class="custom-file-label" for="imagen">Cargar imagen...</label>
          </div>
       </div>
 
