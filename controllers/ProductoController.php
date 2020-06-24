@@ -32,7 +32,7 @@ class productoController {
 			$descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : false;
 			$precio = isset($_POST['precio']) ? $_POST['precio'] : false;
 			$stock = isset($_POST['stock']) ? $_POST['stock'] : false;
-         $imagen = isset($_POST['imagen']) ? $_POST['imagen'] : false;
+         //$imagen = isset($_POST['imagen']) ? $_POST['imagen'] : false;
          
          if($categoria  && $nombre && $descripcion && $precio && $stock){
             $producto = new productos();
@@ -80,4 +80,46 @@ class productoController {
    //header('Location:'.base_url.'producto/gestionproduct');
    echo '<script>window.location= "'.base_url.'producto/gestionproduct"</script>';
    }
+
+   public function editar(){
+		Utilidades::esAdministrador();
+		if(isset($_GET['id'])){
+			$id = $_GET['id'];
+			$edit = true;
+			
+			$producto = new productos();
+			$producto->set_id($id);
+			
+			$pro = $producto->get_todo();
+			
+			require_once 'views/productos/crear.php';
+			
+		}else{
+         //header('Location:'.base_url.'producto/gestion');
+         echo '<script>window.location= "'.base_url.'producto/gestionproduct"</script>';
+		}
+   }
+   
+   public function eliminar(){
+		Utilidades::esAdministrador();
+		
+		if(isset($_GET['id'])){
+			$id = $_GET['id'];
+         $producto = new Productos();
+         //envia al modelo de producct el id recibido por el id en el boton de eliminar del archivo views/gestion.php
+			$producto->set_id($id);
+         
+         //recibe un true o false si realizo la eliminacion de registro
+			$delete = $producto->delete();
+			if($delete){
+				$_SESSION['borrar'] = 'complete';
+			}else{
+				$_SESSION['borrar'] = 'failed';
+			}
+		}else{
+			$_SESSION['borrar'] = 'failed';
+		}
+		//header('Location:'.base_url.'producto/gestion');
+      echo '<script>window.location= "'.base_url.'producto/gestionproduct"</script>';
+	}
 }

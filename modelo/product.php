@@ -108,4 +108,33 @@ class productos {
 		return $result;
    }
 
+   public function edit(){
+		$sql = "UPDATE productos SET categoria_id={$this->get_catid()}, nombre='{$this->get_name()}', descripcion='{$this->get_descrip()}', precio={$this->get_precio()}, stock={$this->get_stock()}, oferta={$this->get_oferta()} ";
+		
+		if($this->get_img() != null){
+			$sql .= ", imagen='{$this->get_img()}'";
+		}
+		
+		$sql .= " WHERE id={$this->id};";
+		
+		$save = $this->db->query($sql);
+		
+		$result = false;
+		if($save){
+			$result = true;
+		}
+		return $result;
+   }
+   
+   public function delete(){
+		$sql = "DELETE FROM productos WHERE id={$this->id}";
+		$delete = $this->conexion->query($sql);
+		
+		$result = false;
+		if($delete){
+			$result = true;
+		}
+		return $result;
+	}
+
 }

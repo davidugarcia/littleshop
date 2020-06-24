@@ -9,6 +9,7 @@
          <?php $categorias = Utilidades::mostrarcat(); ?>
          <div class="input-group">
             <select name="categoria" class="custom-select" id="">
+               <!--la variables $categorias proviene del archivo categoriasController.php y el metodo index-->
                <?php while ($cat = $categorias->fetch_object()): ?>
                <option selected value="<?= $cat->id?>"><?=$cat->nombre?></option>
                <?php endwhile; ?>

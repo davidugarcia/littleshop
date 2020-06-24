@@ -9,7 +9,7 @@ class categoriasController{
 		//instacia creada con la clase del modelo categoria y llamar metodos de esa clase
 		$categoria = new Categoria();
 		//almacena la instancia en la variable $categorias para utilizarla en la vista index.php y colocar los elementos en la tabla
-		//esta variable almacena una objeto que regresa el metodo gettodo()
+		//esta variable almacena una objeto que regresa el metodo gettodo() se utliza en el archivo views/productos/crear.php
 		$categorias = $categoria->gettodo();
 		//mostrar la vista con la categorias exixtente en la database
 		require_once 'views/category/index.php';
