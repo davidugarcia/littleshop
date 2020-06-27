@@ -32,7 +32,7 @@
 
       <!--nav-->
       <div class="row">
-         <div class="col-lg-12">
+         <div class="col-lg-12 mb-2">
             <nav class="navbar navbar-light">
                <!--Letras-->
                <ul class="nav nav-pills">

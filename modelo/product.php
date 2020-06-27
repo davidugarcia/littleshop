@@ -1,7 +1,6 @@
 <?php
 
 class productos {
-
    private $id;
    private $catg_id;
    private $nombre;
@@ -97,8 +96,14 @@ class productos {
       return $productos;
    }
 
+   public function get_productid(){
+		$producto = $this->conexion->query("SELECT * FROM productos WHERE id = {$this->get_id()}");
+		return $producto->fetch_object();
+	}
+	
+
    public function guardar(){
-      $sql = "INSERT INTO productos VALUES(NULL, '{$this->get_catid()}', '{$this->get_name()}', '{$this->get_descrip()}', {$this->get_precio()}, {$this->get_stock()}, NULL, CURDATE(), '{$this->get_img()}');";
+      $sql = "INSERT INTO productos VALUES(NULL, {$this->get_catid()}, '{$this->get_name()}', '{$this->get_descrip()}', {$this->get_precio()}, {$this->get_stock()}, NULL, CURDATE(), '{$this->get_img()}');";
       $registrar = $this->conexion->query($sql);
 
       $result = false;
@@ -109,15 +114,15 @@ class productos {
    }
 
    public function edit(){
-		$sql = "UPDATE productos SET categoria_id={$this->get_catid()}, nombre='{$this->get_name()}', descripcion='{$this->get_descrip()}', precio={$this->get_precio()}, stock={$this->get_stock()}, oferta={$this->get_oferta()} ";
+		$sql = "UPDATE productos SET categoria_id={$this->get_catid()}, nombre='{$this->get_name()}', descripcion='{$this->get_descrip()}', precio={$this->get_precio()}, stock={$this->get_stock()} ";
 		
 		if($this->get_img() != null){
 			$sql .= ", imagen='{$this->get_img()}'";
 		}
-		
+		//cuando el id sea igual al id de la base de datos
 		$sql .= " WHERE id={$this->id};";
-		
-		$save = $this->db->query($sql);
+		//regresar ture o false
+		$save = $this->conexion->query($sql);
 		
 		$result = false;
 		if($save){

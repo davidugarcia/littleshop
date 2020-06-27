@@ -23,7 +23,7 @@
          <button type="submit" class="btn btn-primary espacio">Ingresar</button>
       </form>
    <?php else: ?>
-      <h3 class ="text-center"><?=$_SESSION['identity']->nombre?> <?=$_SESSION['identity']->apellidos?></h3>
+      <h3 class ="text-center letra"><?=$_SESSION['identity']->nombre?> <?=$_SESSION['identity']->apellidos?></h3>
    <?php endif; ?>
 
    <div class="row d-flex justify-content-center">
@@ -38,7 +38,7 @@
 
                <?php if(isset($_SESSION['identity'])): ?>
                <li><a href="<?=base_url?>"><span class="fa-li"><i class="fas fa-user-circle"></i></span>Mis pedidos</a></li>
-               <li><a href="<?=base_url?>usuario/cerrarsesion">cerrar sesion</a></li>
+               <li><a href="<?=base_url?>usuario/cerrarsesion"><span class="fa-li"><i class="fas fa-times-circle"></i></span>cerrar sesion</a></li> 
             </ul> 
          </div>
       <?php else: ?>

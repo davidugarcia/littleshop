@@ -33,7 +33,6 @@
                <th scope="col">DRESCRIPCION</th>
                <th scope="col">PRECIO</th>
                <th scope="col">STOCK</th>
-               <th scope="col">OFERTA</th>
                <th scope="col">ACCIONES</th>
             </tr>
          </thead>
@@ -46,7 +45,6 @@
                <th scope="row"><?=$product->descripcion;?></th>
                <th scope="row"><?=$product->precio;?></th>
                <th scope="row"><?=$product->stock;?></th>
-               <th scope="row"><?=$product->oferta;?></th>
                <th scope="row">
                   <div class="btn-group-vertical btn-group-sm">
                      <a href="<?=base_url?>producto/editar&id=<?=$product->id?>" type="button" class="btn btn-warning">Editar</a>
