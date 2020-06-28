@@ -1,6 +1,7 @@
 <?php
 //conexion al modelo de category.php
 require_once 'modelo/category.php';
+require_once 'modelo/product.php';
 
 class categoriasController{
 
@@ -14,6 +15,28 @@ class categoriasController{
 		//mostrar la vista con la categorias exixtente en la database
 		require_once 'views/category/index.php';
 	}
+
+	public function ver(){
+		//el id es el cuando se selecciona una categoria que pertenece ala tabla categorias
+		if(isset($_GET['id'])){
+			$id = $_GET['id'];
+			
+			// Conseguir categoria
+			$categoria = new Categoria();
+			$categoria->setid($id);
+			//esta variable $categoria es utilizada en la vista ver.php de categorias
+			$categoria = $categoria->get_mostrar();
+			
+			// Conseguir productos;
+			$producto = new Productos();
+			$producto->set_catgid($id);
+			//esta variable productos es utilizada en la vista ver.php de categorias
+			$productos = $producto->todas_categ();
+		}
+		
+		require_once 'views/category/ver.php';
+	}
+	
 
 	public function crearcat(){
 		
@@ -30,7 +53,7 @@ class categoriasController{
 			$categoria = new Categoria();
 
 			$categoria->setname($_POST['name']);
-
+			//esta variable save es utilizada en la vista ver.php de categorias
 			$save = $categoria->guardarcateg();
 		}
 		//header("Location:".base_url."categoria/index");

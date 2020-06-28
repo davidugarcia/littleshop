@@ -5,12 +5,12 @@ require_once 'modelo/usuarios.php';
 class usuarioController {
 
   public function registro(){
-  //renderiza la vista de registro.php al dar click en el link ubicado en el archivo formroles.php
+  //vista del archivo formroles.php
     require_once "views/usuario/registro.php";
   }
 
   public function guardar(){
-    //metodo para guardar datos en la database mytienda provenientes del post en el archivo regsitro.php
+    //guardar datos en la database mytienda provenientes del post de regsitro.php
     if(isset($_POST)){
 
       $nombre = isset($_POST['name']) ? $_POST['name'] : false;
@@ -21,13 +21,13 @@ class usuarioController {
       if($nombre && $apellidos && $email && $password){
         //instancia o objeto creado con la clase usuario del archivo modelo/usuarios.php
         $usuario = new usuario();
-        //intancias creada con los metodos de la clase usuario del archivo modelo/usuarios.php
+        //intancias creada con los metodos de la clase usuario (modelo/usuarios.php)
         $usuario->setnombre($nombre);
         $usuario->setapellido($apellidos);
         $usuario->setcorreo($email);
         $usuario->setcontraseña($password);
 
-        //la instacia guardar() regresa true si la database inserto los datos luego lo almacena y hace un return en la variable $guradar del archivo modelo/usuarios.php
+        //la instacia guardar() almacena true o false si la database inserto los datos
         $save = $usuario->guardar();
             
         if($save){        

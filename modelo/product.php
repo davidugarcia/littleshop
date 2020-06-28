@@ -96,11 +96,21 @@ class productos {
       return $productos;
    }
 
-   public function get_productid(){
+   public function todas_categ(){
+		$sql = "SELECT p.*, c.nombre AS 'catnombre' FROM productos p "
+				. "INNER JOIN categorias c ON c.id = p.categoria_id "
+				. "WHERE p.categoria_id = {$this->get_catid()} "
+				. "ORDER BY id DESC";
+		$producto = $this->conexion->query($sql);
+		return $producto;
+	}
+
+  public function get_productid(){
 		$producto = $this->conexion->query("SELECT * FROM productos WHERE id = {$this->get_id()}");
 		return $producto->fetch_object();
    }
    
+   //muestra 6 productos al random
    public function mostrarproduct($limit){
 		$productos = $this->conexion->query("SELECT * FROM productos ORDER BY RAND() LIMIT $limit");
 		return $productos;

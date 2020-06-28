@@ -2,7 +2,7 @@
 
    <div class="card-group">
       <?php while($product = $productos->fetch_object()): ?>
-         <div class="producto">
+         <div class="producto mr-2">
             <a href="">
                <?php if($product->imagen != null): ?>
                   <img src="<?=base_url?>uploads/images/<?=$product->imagen?>" style="" class="card-img-top" alt="">

@@ -38,7 +38,7 @@
                <ul class="nav nav-pills">
                
                   <li class="nav-item">
-                     <a class="nav-link active" href="#">Inicio</a>
+                     <a class="nav-link active" href="<?=base_url?>">Inicio</a>
                   </li>
 
                   <li class="nav-item dropdown">
@@ -47,7 +47,7 @@
                      <?php $categorias =  Utilidades::mostrarcat(); ?>
                      <div class="dropdown-menu">
                         <?php while($cat = $categorias->fetch_object()): ?>
-                        <a class="dropdown-item" href="#"><?=$cat->nombre?></a>
+                        <a class="dropdown-item" href="<?=base_url?>categorias/ver&id=<?=$cat->id?>"><?=$cat->nombre?></a>
                         <?php endwhile; ?>
                      </div>
                   </li>

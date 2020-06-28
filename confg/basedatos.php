@@ -6,9 +6,9 @@ class database {
    $password="";
    $dbname="mytienda";*/
    public static function conectar(){
-      $conexion = new mysqli("localhost", "root", "", "mytienda");
-      $conexion->query ("SET NAMES 'UTF8'");
-      return $conexion;
+      $conectar = new mysqli("localhost", "root", "", "mytienda");
+      $conectar->query ("SET NAMES 'UTF8'");
+      return $conectar;
 
    //$con->close();
    }

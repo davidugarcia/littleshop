@@ -11,7 +11,11 @@ class Categoria{
    // el metodo conectar regresa el valor true si existe la conexion
    public function __construct(){
       $this->conexion = database::conectar();
-   }
+	}
+	
+	function setid($id) {
+		$this->id = $id;
+	}
 
   function setname($name) {
 		$this->nombre = $this->conexion->real_escape_string($name);
@@ -24,12 +28,19 @@ class Categoria{
 	function getname() {
 		return $this->nombre;
    }
-   
+	
+	//muestra todos los elementos de manera descendente
    public function gettodo() {
 		//consultar todas las categorias de la tabla categorias en la database
 		$categorias = $this->conexion->query("SELECT * FROM categorias ORDER BY id DESC;");
 		return $categorias;
-   }
+	}
+	
+	//muestra todos los elementos cunado el id es igual a metodo getid
+	public function get_mostrar(){
+		$categoria = $this->conexion->query("SELECT * FROM categorias WHERE id={$this->getid()}");
+		return $categoria->fetch_object();
+	}
 
    public function guardarcateg(){
 		//inserta categorias en la tabla de la database
