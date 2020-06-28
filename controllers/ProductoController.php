@@ -4,6 +4,10 @@ require_once 'modelo/product.php';
 class productoController {
 
    public function index() {
+
+		//mostrar productos actuales
+		$producto = new Productos();
+		$productos = $producto->mostrarproduct(6);
       //rederizar vista de menuproduct.php
       require_once 'views/productos/menuproduct.php';
    }

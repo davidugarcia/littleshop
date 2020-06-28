@@ -36,10 +36,10 @@
 
       <div class="form-row">
 
-         <div class="col-md-12 mb-3">
+         <div class="col-md-8 mb-3">
             <label for="">Descripcion</label>
             <textarea name="descripcion" class="form-control is-invalid" id="validationTextarea"
-               placeholder="descripcion del producto"
+            style="word-wrap: break-word" placeholder="descripcion del producto"
                required><?=isset($pro) && is_object($pro) ? $pro->descripcion : ''; ?></textarea>
          </div>
 

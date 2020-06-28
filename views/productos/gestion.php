@@ -24,7 +24,7 @@
 <?php Utilidades::borrarSession("borrar"); ?>
 
 <div class="d-flex flex-wrap justify-content-center">
-   <div class="col-lg-12">
+   <div class="table-responsive-xl">
       <table class="table table-hover table-dark">
          <thead>
             <tr>

@@ -99,9 +99,13 @@ class productos {
    public function get_productid(){
 		$producto = $this->conexion->query("SELECT * FROM productos WHERE id = {$this->get_id()}");
 		return $producto->fetch_object();
+   }
+   
+   public function mostrarproduct($limit){
+		$productos = $this->conexion->query("SELECT * FROM productos ORDER BY RAND() LIMIT $limit");
+		return $productos;
 	}
 	
-
    public function guardar(){
       $sql = "INSERT INTO productos VALUES(NULL, {$this->get_catid()}, '{$this->get_name()}', '{$this->get_descrip()}', {$this->get_precio()}, {$this->get_stock()}, NULL, CURDATE(), '{$this->get_img()}');";
       $registrar = $this->conexion->query($sql);
