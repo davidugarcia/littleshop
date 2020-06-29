@@ -24,7 +24,7 @@
       <!--header-->
       <header>
          <div class="text-center">
-            <a href="">
+            <a href="<?=base_url?>">
                <h1 class="titulo">Tienda Online</h1>
             </a>
          </div>

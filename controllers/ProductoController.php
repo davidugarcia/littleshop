@@ -4,13 +4,25 @@ require_once 'modelo/product.php';
 class productoController {
 
    public function index() {
-
 		//mostrar productos actuales
 		$producto = new Productos();
 		$productos = $producto->mostrarproduct(6);
       //rederizar vista de menuproduct.php
       require_once 'views/productos/menuproduct.php';
-   }
+	}
+	
+	public function ver(){
+		if(isset($_GET['id'])){
+			$id = $_GET['id'];
+		
+			$producto = new Productos();
+			$producto->set_id($id);
+			
+			$product = $producto->get_productid();
+			
+		}
+		require_once 'views/productos/ver.php';
+	}
 
    public function gestionproduct(){
 
