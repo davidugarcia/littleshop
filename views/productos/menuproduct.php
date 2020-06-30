@@ -13,7 +13,7 @@
             <div class="card-body">
                <h5 class="card-title"><?=$product->nombre?></h5>
                <p class="card-text"><?=$product->precio?></p>
-               <a href="#" class="btn btn-outline-primary">Comprar</a>
+               <a href="<?=base_url?>carrito/add&id=<?=$product->id?>" class="btn btn-outline-primary">Comprar</a>
             </div>
          </div>
       <?php endwhile; ?>

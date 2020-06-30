@@ -1,4 +1,4 @@
-
+<!--el objeto product proviene del controlador producto, metodo ver-->
    <div class="d-flex justify-content-center">
       <?php if (isset($product)): ?>
       <div class="card mb-3" style="max-width: 500px;">
@@ -18,7 +18,8 @@
                         <p class="card-text"><?= $product->descripcion ?></p>
                         <p class="card-text">$<?= $product->precio ?></p>
                         <p class="card-text"><small class="text-muted"><?= $product->fecha ?></small></p>
-                        <a href="#" class="btn btn-outline-primary">Comprar</a>
+                        <!--carrito-->
+                        <a href="<?=base_url?>carrito/add&id=<?=$product->id?>" class="btn btn-outline-primary">Comprar</a>
                         <a href="<?=base_url?>" class="btn btn-outline-warning">Menu</a>
                      </div>
                   </div>

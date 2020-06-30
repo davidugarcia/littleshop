@@ -17,7 +17,7 @@ class productoController {
 		
 			$producto = new Productos();
 			$producto->set_id($id);
-			
+			//variable utilizada en en el archivo producto ver.php
 			$product = $producto->get_productid();
 			
 		}
