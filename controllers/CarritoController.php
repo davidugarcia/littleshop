@@ -38,11 +38,12 @@ class carritoController {
 			// Conseguir producto
 			$producto = new Productos();
 			$producto->set_id($producto_id);
+			// realiza la consulta atraves de esta instacia
 			$producto = $producto->get_productid();
 
 			// Añadir al carrito
 			if(is_object($producto)){
-            // se crea un arreglo asociativo
+            // se crea un arreglo asociativo, los indices de este array sera igual a cada producto variado que coloque en el carrito
 				$_SESSION['carrito'][] = array(
                //key=>valor
 					"id_producto" => $producto->id,

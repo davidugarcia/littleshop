@@ -48,11 +48,25 @@
       <?php endforeach; ?>
    </table>
 
-<br/>
-<div class="">
-   <a href="<?=base_url?>carrito/delete_all" type="button" class="btn btn-outline-dark">Vaciar carrito</a>
-</div>
+   <br/>
+  
+   <div class="">
+      <?php $estatus = Utilidades::estatus_Carrito(); ?>
+      <h3>Precio total: $<?=$estatus['total']?></h3>
+      <a href="<?=base_url?>carrito/delete_all" type="button" class="btn btn-success">Realizar pedido</a>
+   </div>
+
+   <br/>
+   <div class="">
+      <a href="<?=base_url?>carrito/delete_all" type="button" class="btn btn-outline-dark">Vaciar carrito</a>
+   </div>
+
 
 <?php else: ?>
-	<p>El carrito está vacio, añade algun producto</p>
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>El carrito está vacio,</strong> añade algun producto.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
 <?php endif; ?>

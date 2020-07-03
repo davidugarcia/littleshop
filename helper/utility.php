@@ -34,4 +34,22 @@ class Utilidades{
 		return $categorias;
 	}
 
+	public static function estatus_Carrito(){
+		
+		$stats = array(
+			'cuenta_products' => 0,
+			'total' => 0
+		);
+		
+		if(isset($_SESSION['carrito'])){
+			$stats['cuenta_products'] = count($_SESSION['carrito']);
+			
+			foreach($_SESSION['carrito'] as $producto){
+				$stats['total'] += $producto['precio']*$producto['unidades'];
+			}
+		}
+		
+		return $stats;
+	}
+
 }
