@@ -60,7 +60,8 @@ class usuarioController {
       //die();
         
       if($identity && is_object($identity)){
-        //variables de sesion utilizadas en el archivo fromroles.php
+        //variables de sesion utilizadas en el archivo en varios archivos que se necesita saber si hay un usuario para mostrar vistas
+        //regresa un registro de usuario que tenga igual email y contraseña 
         $_SESSION['identity'] = $identity;
           
         if($identity->rol == 'admin'){

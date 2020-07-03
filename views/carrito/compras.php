@@ -53,7 +53,7 @@
    <div class="">
       <?php $estatus = Utilidades::estatus_Carrito(); ?>
       <h3>Precio total: $<?=$estatus['total']?></h3>
-      <a href="<?=base_url?>carrito/delete_all" type="button" class="btn btn-success">Realizar pedido</a>
+      <a href="<?=base_url?>pedidos/realizar_pedido" type="button" class="btn btn-success">Realizar pedido</a>
    </div>
 
    <br/>
