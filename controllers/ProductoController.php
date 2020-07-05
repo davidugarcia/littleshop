@@ -6,6 +6,7 @@ class productoController {
    public function index() {
 		//mostrar productos actuales
 		$producto = new Productos();
+		//regresa todos los campos de la tabla prducto de manera randow con limite de 6 items
 		$productos = $producto->mostrarproduct(6);
       //rederizar vista de menuproduct.php
       require_once 'views/productos/menuproduct.php';
@@ -17,7 +18,8 @@ class productoController {
 		
 			$producto = new Productos();
 			$producto->set_id($id);
-			//variable utilizada en en el archivo producto ver.php
+			//variable utilizada en el archivo producto ver.php
+			//regresa todos los campos de la tabla producto depediendo el id 
 			$product = $producto->get_productid();
 			
 		}

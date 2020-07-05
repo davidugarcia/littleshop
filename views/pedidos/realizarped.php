@@ -13,12 +13,12 @@
          <div class="form-row">
             <div class="form-group col-lg-6">
                <label for="user">Provincia</label>
-               <input type="text" class="form-control is-valid" name="provincia" value="Provincia" required>
+               <input type="text" class="form-control is-valid" name="provincia" value="" required>
             </div>
          
             <div class="form-group col-lg-6">
                <label for="user">Ciudad</label>
-               <input type="text" class="form-control is-valid" name="ciudad" value="Ciudad" required>
+               <input type="text" class="form-control is-valid" name="ciudad" value="" required>
             </div>
          </div>
 

@@ -27,11 +27,13 @@ class Utilidades{
 	}
 	
 	public static function mostrarcat(){
+
 		//metodo para mostrar las categias de productos en el nav
 		require_once 'modelo/category.php';
 		$categoria = new Categoria();
 		$categorias = $categoria->gettodo();
 		return $categorias;
+		
 	}
 
 	public static function estatus_Carrito(){

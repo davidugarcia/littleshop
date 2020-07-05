@@ -48,13 +48,15 @@ class usuarioController {
     //exit();
   }
   public function ingresar(){
+
     if(isset($_POST)){
       // Identificar al usuario
       // Consulta a la base de datos
       $usuario = new usuario();
       $usuario->setcorreo($_POST['email']);
       $usuario->setcontraseña($_POST['pass']);
-        
+      
+      //recibe todo los registros de datos de usuario atreaves del email y contra 
       $identity = $usuario->registrate();
       //var_dump($identity);
       //die();
@@ -84,5 +86,6 @@ class usuarioController {
     }
     //header("Location:".base_url);
     echo '<script>window.location= "'.base_url.'"</script>';
-	}
+  }
+  
 }

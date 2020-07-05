@@ -41,12 +41,16 @@ class pedidosController{
                $save = $pedido->guardar();
                
                // Guardar linea pedido
-               //$save_linea = $pedido->guardar_linea();
+               $save_linea = $pedido->guardar_linea();
                
-               if($save /*&& $saveinea*/){
+               if($save && $save_linea){
+
                   $_SESSION['pedido'] = "complete";
+
                }else{
+                  
                   $_SESSION['pedido'] = "failed";
+
                }
                
             }else{
@@ -54,13 +58,30 @@ class pedidosController{
             }
             
             //header("Location:".base_url.'pedido/confirmado');		
-           // echo '<script>window.location= "'.base_url.'pedido/confirmado"</script>';	
+           echo '<script>window.location= "'.base_url.'pedidos/confirmado"</script>';
+
          }else{
             // Redigir al index
             //header("Location:".base_url);
             echo '<script>window.location= "'.base_url.'"</script>';
          }
-
    }
+
+   public function confirmado(){
+		if(isset($_SESSION['identity'])){
+
+         $identity = $_SESSION['identity'];
+         
+			$pedido = new Pedidos();
+			$pedido->setUsuario_id($identity->id);
+         
+         //el modelo regresa id y coste de la tabla pedidos limite = 1
+			$pedido_user = $pedido->product_user();
+			
+			$pedido_productos = new Pedidos;
+			$productos = $pedido_productos->getProductosbyPedido($pedido_user->id);
+		}
+		require_once 'views/pedidos/confirmado.php';
+	}
 
 }

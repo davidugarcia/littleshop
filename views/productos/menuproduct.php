@@ -1,6 +1,7 @@
 <h5 class="titulo espacio1 text-center">Nuestros productos</h5>
 
    <div class="card-group">
+      <!--variable $productos controlador producto/metodo index-->
       <?php while($product = $productos->fetch_object()): ?>
          <div class="producto mr-2">
             <a href="<?=base_url?>producto/ver&id=<?=$product->id?>">

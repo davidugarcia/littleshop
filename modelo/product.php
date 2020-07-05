@@ -55,6 +55,8 @@ class productos {
       $this->imagen = $img;
    }
 
+   //get
+   
    public function get_id(){
       return $this->id;
    }

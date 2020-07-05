@@ -16,11 +16,12 @@ class carritoController {
 	}
 	  
 	public function add(){
-      //si esxiste el id del prodcuto
+      //si existe el id del producto
 		if(isset($_GET['id'])){
 			$producto_id = $_GET['id'];
 		}else{
-			header('Location:'.base_url);
+			//header('Location:'.base_url);
+			echo '<script>window.location= "'.base_url.'"</script>';
 		}
 		
 		if(isset($_SESSION['carrito'])){
@@ -39,6 +40,7 @@ class carritoController {
 			$producto = new Productos();
 			$producto->set_id($producto_id);
 			// realiza la consulta atraves de esta instacia
+			//regresa todos los campos de tabla producto por medio del dato id
 			$producto = $producto->get_productid();
 
 			// Añadir al carrito

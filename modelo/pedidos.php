@@ -92,7 +92,7 @@ class Pedidos{
 	}
 
 	
-	public function getAll(){
+	/*public function getAll(){
 		$productos = $this->conexion->query("SELECT * FROM pedidos ORDER BY id DESC");
 		return $productos;
 	}
@@ -100,16 +100,6 @@ class Pedidos{
 	public function getOne(){
 		$producto = $this->conexion->query("SELECT * FROM pedidos WHERE id = {$this->getId()}");
 		return $producto->fetch_object();
-	}
-	
-	public function getOneByUser(){
-		$sql = "SELECT p.id, p.coste FROM pedidos p "
-				//. "INNER JOIN lineas_pedidos lp ON lp.pedido_id = p.id "
-				. "WHERE p.usuario_id = {$this->getUsuario_id()} ORDER BY id DESC LIMIT 1";
-			
-		$pedido = $this->conexion->query($sql);
-			
-		return $pedido->fetch_object();
 	}
 	
 	public function getAllByUser(){
@@ -121,20 +111,8 @@ class Pedidos{
 		return $pedido;
 	}
 	
-	
-	public function getProductosByPedido($id){
-//		$sql = "SELECT * FROM productos WHERE id IN "
-//				. "(SELECT producto_id FROM lineas_pedidos WHERE pedido_id={$id})";
-	
-		$sql = "SELECT pr.*, lp.unidades FROM productos pr "
-				. "INNER JOIN lineas_pedidos lp ON pr.id = lp.producto_id "
-				. "WHERE lp.pedido_id={$id}";
-				
-		$productos = $this->conexion->query($sql);
-			
-		return $productos;
-	}
-   
+   */
+
 	public function guardar(){
       //inserta los pedidos en la tabla pedidos de la datbase
 		$sql = "INSERT INTO pedidos VALUES(NULL, {$this->getUsuario_id()}, '{$this->getProvincia()}', '{$this->getLocalidad()}', '{$this->getDireccion()}', {$this->getCoste()}, 'confirm', CURDATE(), CURTIME());";
@@ -147,7 +125,7 @@ class Pedidos{
 		return $result;
 	}
    
-   //relaciona un pedido con los datos del usuario 
+   //relaciona un pedido con los datos del usuario inserta datos en tabla lineas_pedidos
 	public function guardar_linea(){
 
       //Devuelve el ID de AUTO_INCREMENT de la última fila que se ha insertado o actualizado en una tabla:
@@ -176,6 +154,35 @@ class Pedidos{
 		return $result;
 	}
 	
+	public function product_user(){
+
+		$sql = "SELECT p.id, p.coste FROM pedidos p "
+				//. "INNER JOIN lineas_pedidos lp ON lp.pedido_id = p.id "
+				. "WHERE p.usuario_id = {$this->getUsuario_id()} ORDER BY id DESC LIMIT 1";
+			
+		$pedido = $this->conexion->query($sql);
+			
+		return $pedido->fetch_object();
+	}
+
+	public function getProductosbyPedido($identify){
+		//		$sql = "SELECT * FROM productos WHERE id IN "
+		//				. "(SELECT producto_id FROM lineas_pedidos WHERE pedido_id={$id})";
+			
+				$sql = "SELECT pr.*, lp.unidades FROM productos pr "
+						. "INNER JOIN lineas_pedidos lp ON pr.id = lp.producto_id "
+						. "WHERE lp.pedido_id={$identify}";
+						
+				$productos = $this->conexion->query($sql);
+					
+				return $productos;
+	}
+
+
+
+
+
+
 	public function edit(){
 		$sql = "UPDATE pedidos SET estado='{$this->getEstado()}' ";
 		$sql .= " WHERE id={$this->getId()};";

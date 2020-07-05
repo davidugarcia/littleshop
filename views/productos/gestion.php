@@ -36,7 +36,7 @@
                <th scope="col">ACCIONES</th>
             </tr>
          </thead>
-         <!--la variables $productos proviene del archivo ProductoController y el metodo gestionproduct-->
+         <!--la variables $productos proviene del archivo ProductoController/metodo gestionproduct-->
          <?php while($product = $productos->fetch_object()): ?>
          <tbody>
             <tr>
