@@ -25,6 +25,15 @@ class Utilidades{
 			return true;
 		}	
 	}
+
+	public static function isIdentity(){
+		if(!isset($_SESSION['identity'])){
+			//header("Location:".base_url);
+			echo '<script>window.location= "'.base_url.'"</script>';
+		}else{
+			return true;
+		}
+	}
 	
 	public static function mostrarcat(){
 

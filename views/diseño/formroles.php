@@ -68,7 +68,7 @@
       <?php endif; ?>
 
       <?php if(isset($_SESSION['identity'])): ?>
-               <li><a href="<?=base_url?>"><span class="fa-li"><i class="fas fa-user-circle"></i></span>Mis pedidos</a></li>
+               <li><a href="<?=base_url?>pedidos/mis_pedidos"><span class="fa-li"><i class="fas fa-user-circle"></i></span>Mis pedidos</a></li>
                <li><a href="<?=base_url?>usuario/cerrarsesion"><span class="fa-li"><i class="fas fa-times-circle"></i></span>cerrar sesion</a></li>
             </ul>
          </div>

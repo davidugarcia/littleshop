@@ -54,27 +54,27 @@ class usuario {
 
    function getnombre(){
       return  $this->nombre;
-    }
+   }
 
-    function getapellido(){
+   function getapellido(){
       return  $this->apellido;
-    }
+   }
 
-    function getcorreo(){
+   function getcorreo(){
       return  $this->email;
-    }
+   }
 
-    function getcontraseña(){
+   function getcontraseña(){
       return password_hash($this->conexion->real_escape_string($this->password), PASSWORD_BCRYPT, ['cost' => 4]);
-    }
+   }
 
-    function getrol(){
+   function getrol(){
       return  $this->rol;
-    }
+   }
 
-    function getimagen(){
+   function getimagen(){
       return  $this->imagen;
-    }
+   }
     
    //insertar registros en la tabla usuario de la basde de datos mytienda  
    public function guardar(){

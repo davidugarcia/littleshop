@@ -82,6 +82,19 @@ class pedidosController{
 			$productos = $pedido_productos->getProductosbyPedido($pedido_user->id);
 		}
 		require_once 'views/pedidos/confirmado.php';
+   }
+   
+   public function mis_pedidos(){
+
+		Utilidades::isIdentity();
+		$usuario_id = $_SESSION['identity']->id;
+		$pedido = new Pedidos();
+		
+      $pedido->setUsuario_id($usuario_id);
+      // Saca los pedidos del usuario cuando el usuario_id = al id de tabla de usuario
+		$mispedidos = $pedido->gettodoUsuario();
+		
+		require_once 'views/pedidos/mis_pedidos.php';
 	}
 
 }

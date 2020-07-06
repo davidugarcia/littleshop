@@ -102,14 +102,6 @@ class Pedidos{
 		return $producto->fetch_object();
 	}
 	
-	public function getAllByUser(){
-		$sql = "SELECT p.* FROM pedidos p "
-				. "WHERE p.usuario_id = {$this->getUsuario_id()} ORDER BY id DESC";
-			
-		$pedido = $this->conexion->query($sql);
-			
-		return $pedido;
-	}
 	
    */
 
@@ -177,6 +169,16 @@ class Pedidos{
 					
 				return $productos;
 	}
+
+	public function gettodoUsuario(){
+		$sql = "SELECT p.* FROM pedidos p "
+				. "WHERE p.usuario_id = {$this->getUsuario_id()} ORDER BY id DESC";
+			
+		$pedido = $this->conexion->query($sql);
+			
+		return $pedido;
+	}
+	
 
 
 
