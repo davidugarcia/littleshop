@@ -5,9 +5,7 @@ require_once 'modelo/pedidos.php';
 class pedidosController{
       
    public function realizar_pedido(){
-
       require_once 'views/pedidos/realizarped.php';
-
    }
 
    public function add(){
@@ -84,6 +82,7 @@ class pedidosController{
 		require_once 'views/pedidos/confirmado.php';
    }
    
+
    public function mis_pedidos(){
 
 		Utilidades::isIdentity();
@@ -93,6 +92,43 @@ class pedidosController{
       $pedido->setUsuario_id($usuario_id);
       // Saca los pedidos del usuario cuando el usuario_id = al id de tabla de usuario
 		$mispedidos = $pedido->gettodoUsuario();
+		
+		require_once 'views/pedidos/mis_pedidos.php';
+   }
+   
+   //porviene del archivo mis_pedidos.php
+   public function detalle(){
+		Utilidades::isIdentity();
+		
+		if(isset($_GET['id'])){
+			$id = $_GET['id'];
+			
+			// Sacar el pedido
+			$pedido = new Pedidos();
+         $pedido->setId($id);
+         //regresa todos los campos con los registros de la tabla pedidos
+			$getpedido = $pedido->getunico();
+			
+			// Sacar los poductos
+         $pedido_productos = new Pedidos();
+         /*saca todo los datos de la tabla productos y el campo unidades dela 
+         tabla lineas_pedidos atraves de id*/
+			$productos = $pedido_productos->getProductosByPedido($id);
+			
+			require_once 'views/pedidos/detalle.php';
+		}else{
+         //header('Location:'.base_url.'pedido/mis_pedidos');
+         echo '<script>window.location= "'.base_url.'pedidos/mis_pedidos"</script>';
+		}
+   }
+   
+   public function gestion(){
+		Utilidades::esAdministrador();
+		$gestion = true;
+		
+      $pedido = new Pedidos();
+      //saca todo los registros de la tabla pedidos de manera desc por id
+		$pedidos = $pedido->gettodo();
 		
 		require_once 'views/pedidos/mis_pedidos.php';
 	}

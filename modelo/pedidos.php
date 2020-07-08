@@ -91,20 +91,6 @@ class Pedidos{
 		return $this->hora;
 	}
 
-	
-	/*public function getAll(){
-		$productos = $this->conexion->query("SELECT * FROM pedidos ORDER BY id DESC");
-		return $productos;
-	}
-	
-	public function getOne(){
-		$producto = $this->conexion->query("SELECT * FROM pedidos WHERE id = {$this->getId()}");
-		return $producto->fetch_object();
-	}
-	
-	
-   */
-
 	public function guardar(){
       //inserta los pedidos en la tabla pedidos de la datbase
 		$sql = "INSERT INTO pedidos VALUES(NULL, {$this->getUsuario_id()}, '{$this->getProvincia()}', '{$this->getLocalidad()}', '{$this->getDireccion()}', {$this->getCoste()}, 'confirm', CURDATE(), CURTIME());";
@@ -178,13 +164,17 @@ class Pedidos{
 			
 		return $pedido;
 	}
+
+	public function getunico(){
+		$producto = $this->conexion->query("SELECT * FROM pedidos WHERE id = {$this->getId()}");
+		return $producto->fetch_object();
+	}
 	
-
-
-
-
-
-
+	public function gettodo(){
+		$productos = $this->conexion->query("SELECT * FROM pedidos ORDER BY id DESC");
+		return $productos;
+	}
+   
 	public function edit(){
 		$sql = "UPDATE pedidos SET estado='{$this->getEstado()}' ";
 		$sql .= " WHERE id={$this->getId()};";
