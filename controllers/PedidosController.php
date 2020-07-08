@@ -128,7 +128,7 @@ class pedidosController{
 		
       $pedido = new Pedidos();
       //saca todo los registros de la tabla pedidos de manera desc por id
-		$pedidos = $pedido->gettodo();
+		$mispedidos = $pedido->gettodo();
 		
 		require_once 'views/pedidos/mis_pedidos.php';
 	}

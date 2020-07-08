@@ -175,7 +175,7 @@ class Pedidos{
 		return $productos;
 	}
    
-	public function edit(){
+	/*public function edit(){
 		$sql = "UPDATE pedidos SET estado='{$this->getEstado()}' ";
 		$sql .= " WHERE id={$this->getId()};";
 		
@@ -186,5 +186,7 @@ class Pedidos{
 			$result = true;
 		}
 		return $result;
-	}
+	}*/
+
+
 }

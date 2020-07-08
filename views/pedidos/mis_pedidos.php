@@ -1,4 +1,8 @@
-<h5>Mis pedidos</h5>
+<?php if (isset($gestion)): ?>
+	<h5>Gestionar pedidos</h5>
+<?php else: ?>
+  <h5>Mis pedidos</h5>
+<?php endif; ?>
 
 <table class="table">
   <thead>
@@ -11,13 +15,11 @@
   </thead>
   <tbody>
     <tr>
-      <?php
-	      while ($pedidos = $mispedidos->fetch_object()):
-		?>
-      <th scope="row"><a href="<?= base_url ?>pedido/detalle&id=<?= $pedidos->id ?>"><?= $pedidos->id ?></a></th>
+      <?php while ($pedidos = $mispedidos->fetch_object()):?>
+      <th scope="row"><a href="<?= base_url ?>pedidos/detalle&id=<?= $pedidos->id ?>"><?= $pedidos->id ?></a></th>
       <td>$<?= $pedidos->coste ?></td>
       <td><?= $pedidos->fecha ?></td>
-      <?php endwhile; ?>
     </tr>
+    <?php endwhile; ?>
   </tbody>
 </table>
