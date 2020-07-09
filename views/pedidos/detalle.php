@@ -1,11 +1,34 @@
 
-
+<!--la variable $getpedido proviene del metodo detalles de la clase pedidos-->
 <?php if(isset($getpedido)): ?>
+
+   <?php if(isset($_SESSION['admin'])): ?>
+			<h3>Cambiar estado del pedido</h3>
+			<form action="<?=base_url?>pedidos/estado" method="POST">	
+            <div class="form-group col-md-4">
+
+               <input type="hidden" class="btn btn-primary" value="<?=$getpedido->id?>" name="pedido_id"/>
+
+               <label for="inputState">ESTADO</label>
+
+               <select name="estado" id="inputState" class="form-control">
+                  <option value="confirm" <?=$getpedido->estado == "confirm" ? 'selected' : '';?>>Pendiente</option>
+                  <option value="preparation" <?=$getpedido->estado == "preparation" ? 'selected' : '';?>>En preparación</option>
+                  <option value="ready" <?=$getpedido->estado == "ready" ? 'selected' : '';?>>Preparado para enviar</option>
+                  <option value="sended" <?=$getpedido->estado == "sended" ? 'selected' : '';?>>Enviado</option>
+               </select>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">Cambiar estado</button>
+			</form>
+			<br/>
+	<?php endif; ?>
 
    <h3>Detalle del pedido:</h3>
 
       <h5>Dirección de envio</h5>
-
+      id: <?=$getpedido->id?>  <br/>
 		Provincia: <?= $getpedido->provincia ?>   <br/>
 		Cuidad: <?= $getpedido->localidad ?> <br/>
 		Direccion: <?= $getpedido->direccion ?>   <br/><br/>
