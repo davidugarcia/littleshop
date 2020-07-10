@@ -1,12 +1,14 @@
 <?php if(isset($edit) && isset($pro) && is_object($pro)): ?>
-<h4 class="text-center">Editar producto <?=$pro->nombre?></h4>
-<?php $url_action = base_url."producto/guardarprod&id=".$pro->id; ?>
+   <h4 class="text-center">Editar producto <?=$pro->nombre?></h4>
+   <?php $url_action = base_url."producto/guardarprod&id=".$pro->id; ?>
+
 <?php else: ?>
-<h4 class="text-center">Crear nuevo producto</h4>
-<?php $url_action = base_url."producto/guardarprod"; ?>
+   <h4 class="text-center">Crear nuevo producto</h4>
+   <?php $url_action = base_url."producto/guardarprod"; ?>
 <?php endif; ?>
 
 <div class="d-flex flex-wrap justify-content-center">
+   
    <form action="<?=$url_action?>" method="POST" class="was-validated" enctype="multipart/form-data" style="width:425px">
 
       <div class="form-row">

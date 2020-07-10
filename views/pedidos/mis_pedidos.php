@@ -19,6 +19,7 @@
       <th scope="row"><a href="<?= base_url ?>pedidos/detalle&id=<?= $pedidos->id ?>"><?= $pedidos->id ?></a></th>
       <td>$<?= $pedidos->coste ?></td>
       <td><?= $pedidos->fecha ?></td>
+      <td><?= $pedidos->estado ?></td>
     </tr>
     <?php endwhile; ?>
   </tbody>

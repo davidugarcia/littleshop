@@ -25,6 +25,12 @@
          <button type="submit" class="btn btn-primary espacio">Ingresar</button>
          
       </form>
+
+      <div class="row d-flex justify-content-center">
+         <!--link redirecciona a una vista con el classs usuario y metodo registro en el archivo usuarioController.php-->
+         <a href="<?=base_url?>usuario/registro" type="button" class="btn btn-outline-success">Registrate aqui</a>
+      </div>         
+      
    <?php else: ?>
 
       <h3 class="text-center letra"><?=$_SESSION['identity']->nombre?> <?=$_SESSION['identity']->apellidos?></h3>
@@ -55,28 +61,28 @@
 
    <?php endif; ?>
 
-   <div class="row d-flex justify-content-center">
-      <?php if(isset($_SESSION['admin'])): ?>
-         <div class="link_aside">
-            <ul class="fa-ul">
-               <li><a href="<?=base_url?>producto/gestionproduct"><span class="fa-li"><i
-                           class="fas fa-user-circle"></i></span>Gestionar productos</a></li>
-               <li><a href="<?=base_url?>categorias/crearcat"><span class="fa-li"><i
-                           class="fas fa-id-badge"></i></span>Gestionar categorias</a></li>
-               <li><a href="<?=base_url?>pedidos/gestion"><span class="fa-li"><i class="fas fa-user-cog"></i></span>Gestionar Pedidos</a>
-               </li>
-      <?php endif; ?>
+   <?php if(isset($_SESSION['identity'])): ?>   
 
-      <?php if(isset($_SESSION['identity'])): ?>
-               <li><a href="<?=base_url?>pedidos/mis_pedidos"><span class="fa-li"><i class="fas fa-user-circle"></i></span>Mis pedidos</a></li>
-               <li><a href="<?=base_url?>usuario/cerrarsesion"><span class="fa-li"><i class="fas fa-times-circle"></i></span>cerrar sesion</a></li>
-            </ul>
-         </div>
-      <?php else: ?>
-         <!--link redirecciona a una vista con el classs usuario y metodo registro en el archivo usuarioController.php-->
-         <a href="<?=base_url?>usuario/registro" type="button" class="btn btn-outline-success">Registrate aqui</a>
-      <?php endif; ?>
-   </div>
+      <div class="row d-flex justify-content-center">
+            <div class="link_aside">
+               <ul class="fa-ul">
+                  <?php if(isset($_SESSION['admin'])): ?>
+                     <li><a href="<?=base_url?>producto/gestionproduct"><span class="fa-li"><i
+                                 class="fas fa-user-circle"></i></span>Gestionar productos</a></li>
+                     <li><a href="<?=base_url?>categorias/crearcat"><span class="fa-li"><i
+                                 class="fas fa-id-badge"></i></span>Gestionar categorias</a></li>
+                     <li><a href="<?=base_url?>pedidos/gestion"><span class="fa-li"><i class="fas fa-user-cog"></i></span>Gestionar Pedidos</a>
+                     </li>
+                  <?php endif; ?>
+
+                  <?php if(isset($_SESSION['identity'])): ?>   
+                     <li><a href="<?=base_url?>pedidos/mis_pedidos"><span class="fa-li"><i class="fas fa-user-circle"></i></span>Mis pedidos</a></li>
+                     <li><a href="<?=base_url?>usuario/cerrarsesion"><span class="fa-li"><i class="fas fa-times-circle"></i></span>cerrar sesion</a></li>
+                  <?php endif; ?>          
+               </ul>
+            </div>    
+      </div>
+   <?php endif; ?>   
 
 </div>
 
