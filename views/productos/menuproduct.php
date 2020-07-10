@@ -6,7 +6,7 @@
          <div class="producto mr-2">
             <a href="<?=base_url?>producto/ver&id=<?=$product->id?>">
                <?php if($product->imagen != null): ?>
-                  <img src="<?=base_url?>uploads/images/<?=$product->imagen?>" style="" class="card-img-top" alt="" />
+                  <img src="<?=base_url?>uploads/images/<?=$product->imagen?>" class="card-img-top" alt="" />
                <?php else: ?>
                   <img src="isset/camiseta.png" class="card-img-top div_img" alt="">
                <?php endif; ?> 
