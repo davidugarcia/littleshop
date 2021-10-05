@@ -1,5 +1,9 @@
 /*CREATE DATABASE mytienda;
 USE mytienda;
+INSERT INTO categorias VALUES(null, 'Manga corta');
+INSERT INTO categorias VALUES(null, 'Tirantes');
+INSERT INTO categorias VALUES(null, 'Manga larga');
+INSERT INTO categorias VALUES(null, 'Sudaderas');*/
 
 CREATE TABLE usuarios(
 id              int(255) auto_increment not null,
@@ -19,10 +23,7 @@ nombre          varchar(100) not null,
 CONSTRAINT pk_categorias PRIMARY KEY(id) 
 )ENGINE=InnoDb;
 
-INSERT INTO categorias VALUES(null, 'Manga corta');
-INSERT INTO categorias VALUES(null, 'Tirantes');
-INSERT INTO categorias VALUES(null, 'Manga larga');
-INSERT INTO categorias VALUES(null, 'Sudaderas');
+
 
 CREATE TABLE productos(
 id              int(255) auto_increment not null,
@@ -62,7 +63,7 @@ CONSTRAINT pk_lineas_pedidos PRIMARY KEY(id),
 CONSTRAINT fk_linea_pedido FOREIGN KEY(pedido_id) REFERENCES pedidos(id),
 CONSTRAINT fk_linea_producto FOREIGN KEY(producto_id) REFERENCES productos(id)
 )ENGINE=InnoDb;
-*/
+
 
 
 
