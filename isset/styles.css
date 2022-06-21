@@ -20,40 +20,38 @@
     src: url(../isset/Hiroshima\ gyoshi.otf);
 }
 
-body {
-    background-color: lightcyan!important;
-}
-
-
 /*header*/
 
-a {
-    text-decoration: none!important;
-}
-
-.titulo {
+.header_titulo {
     font-family: "eli";
-    color: #252106;
-    font-size: 52px;
-    text-shadow: 0px 2px 1px #222222;
+    color: #272525;
+    font-size: 50px;
     text-shadow: 2px 2px 4px #000000;
     text-decoration: none;
-    margin-bottom: 14px;
-    padding-bottom: 7px;
+    padding-top: 6px;
 }
 
-.titulo:hover {
-    text-shadow: #000000 1px 1px 0px, #f18f84 2px 2px 0px, #000000 3px 3px 0px, #f18f84 4px 4px 0px, #000000 5px 5px 0px, #f18f84 6px 6px 0px, #000000 7px 7px 0px, #f18f84 8px 8px 0px, #000000 9px 9px 0px, #f18f84 10px 10px 0px, #000000 11px 11px 0px, #f18f84 12px 12px 0px, #000000 13px 13px 0px, #f18f84 14px 14px 0px, #000000 15px 15px 0px;
+a:hover {
+    text-decoration: none !important;
 }
 
-.espacio {
-    margin: 10px;
-    padding: 10px;
+.header_nav {
+    background-color: #2c2727;
 }
 
+.header_link:hover {
+    background-color: #fcfeff;
+}
+
+.header_link a{
+    color: #fcfeff;
+}
+
+.header_link a:hover {
+    color: #2c2727;
+}
 
 /*nav*/
-
 .espacio a {
     color: #6a2b9a!important;
 }

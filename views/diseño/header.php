@@ -19,59 +19,30 @@
 </head>
 
 <body>
-   <div class="container">
+   <div class="container-fluid">
 
-      <!--header-->
-      <header>
-         <div class="text-center">
-            <a href="<?=base_url?>">
-               <h1 class="titulo">Tienda Online</h1>
-            </a>
-         </div>
-      </header>
-
-      <!--nav-->
-      <div class="row">
-         <div class="col-lg-12 mb-2">
-            <nav class="navbar navbar-light">
-               <!--Letras-->
-               <ul class="nav nav-pills">
-               
-                  <li class="nav-item">
-                     <a class="nav-link active" href="<?=base_url?>">Inicio</a>
-                  </li>
-
-                  <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="true" aria-expanded="false">Categorias</a>
-                     <?php $categorias =  Utilidades::mostrarcat(); ?>
-                     <div class="dropdown-menu">
-                        <?php while($cat = $categorias->fetch_object()): ?>
-                        <a class="dropdown-item" href="<?=base_url?>categorias/ver&id=<?=$cat->id?>"><?=$cat->nombre?></a>
-                        <?php endwhile; ?>
-                     </div>
-                  </li>
-               </ul>
-
-               <!--Iconos de nav-->
-               <div class="nav">
-
-                  <div class="bloquesdiv"><a class="divbar-brand" href="#">
-                        <span class="icono"><i class="fas fa-robot"></i>ELIEZER</span></a>
-                  </div>
-                  <div class="bloquesdiv"><a href="" class="icono tooltipedu">
-                        <i class="fab fa-github-alt"></i><span class="tooltiptextedu">cuenta</span></a>
-                  </div>
-                  <div class="bloquesdiv"><a href="" class="icono tooltipedu">
-                        <i class="fab fa-whatsapp"></i><span class="tooltiptextedu">numero</span></a>
-                  </div>
-                  <div class="bloquesdiv"><a href="" class="icono tooltipedu">
-                        <i class="fas fa-at"></i><span class="tooltiptextedu">correo</span></a>
-                  </div>
-
-               </div>
-            </nav>
-         </div>
+      <div class= "">
+         <!--header-->
+         <header>
+            <div class="text-center">
+               <a href="<?=base_url?>">
+                  <h1 class="header_titulo">Shop Shirts Online</h1>
+               </a>
+            </div>
+         </header>
+         
+         <!--nav-->
+         <ul class="header_nav nav justify-content-center">
+            <li class="nav-item header_link">
+               <a class="nav-link active" href="<?=base_url?>">Inicio</a>
+            </li>
+            <?php $categorias =  Utilidades::mostrarcat(); ?>
+            <?php while($cat = $categorias->fetch_object()): ?>
+            <li class="nav-item header_link">    
+               <a class="nav-link" href="<?=base_url?>categorias/ver&id=<?=$cat->id?>"><?=$cat->nombre?></a>
+            </li>
+            <?php endwhile; ?>
+         </ul>
       </div>
 
       <div class="row">

@@ -5,7 +5,7 @@ require_once 'modelo/product.php';
 
 class categoriasController{
 
-   public function index(){
+    public function index(){
 		Utilidades::esAdministrador();
 		//instacia creada con la clase del modelo categoria y llamar metodos de esa clase
 		$categoria = new Categoria();
@@ -37,7 +37,6 @@ class categoriasController{
 		require_once 'views/category/ver.php';
 	}
 	
-
 	public function crearcat(){
 		
 		Utilidades::esAdministrador();
