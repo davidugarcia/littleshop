@@ -19,30 +19,37 @@
 </head>
 
 <body>
-   <div class="container-fluid">
 
-      <div class= "">
-         <!--header-->
-         <header>
-            <div class="text-center">
-               <a href="<?=base_url?>">
-                  <h1 class="header_titulo">Shop Shirts Online</h1>
-               </a>
-            </div>
-         </header>
+      <!--header-->
+      <header class = "d-flex justify-content-around">
+         <div>
+            <a href="<?=base_url?>">
+               <h1 class="header_titulo">Shop Shirts</h1>
+            </a>
+         </div>
+
+         <ul class="header_btn nav">
+               <li class="nav-item">    
+                  <!--link redirecciona a una vista con el classs usuario y metodo registro en el archivo usuarioController.php-->
+                  <a href="<?=base_url?>usuario/registro" type="button" class="btn btn-outline-info">Inicia sesion</a>
+               </li>
+
+               <li class="nav-item">    
+                  <!--link redirecciona a una vista con el classs usuario y metodo registro en el archivo usuarioController.php-->
+                  <a href="<?=base_url?>usuario/registro" type="button" class="btn btn-dark">Registrate</a>
+               </li>
+           </ul>
+      </header>
          
-         <!--nav-->
-         <ul class="header_nav nav justify-content-center">
-            <li class="nav-item header_link">
-               <a class="nav-link active" href="<?=base_url?>">Inicio</a>
-            </li>
-            <?php $categorias =  Utilidades::mostrarcat(); ?>
-            <?php while($cat = $categorias->fetch_object()): ?>
-            <li class="nav-item header_link">    
-               <a class="nav-link" href="<?=base_url?>categorias/ver&id=<?=$cat->id?>"><?=$cat->nombre?></a>
-            </li>
-            <?php endwhile; ?>
-         </ul>
-      </div>
+      <!--nav-->
+      <ul class="header_nav nav justify-content-center">
+         <?php $categorias =  Utilidades::mostrarcat(); ?>
+         <?php while($cat = $categorias->fetch_object()): ?>
+         <li class="nav-item header_link">    
+            <a class="nav-link" href="<?=base_url?>categorias/ver&id=<?=$cat->id?>"><?=$cat->nombre?></a>
+         </li>
+         <?php endwhile; ?>
+      </ul>
 
+   <div class="container-fluid">
       <div class="row">

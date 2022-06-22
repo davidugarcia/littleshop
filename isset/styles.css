@@ -20,12 +20,14 @@
     src: url(../isset/Hiroshima\ gyoshi.otf);
 }
 
+
+
 /*header*/
 
 .header_titulo {
     font-family: "eli";
     color: #272525;
-    font-size: 50px;
+    font-size: 37px;
     text-shadow: 2px 2px 4px #000000;
     text-decoration: none;
     padding-top: 6px;
@@ -34,6 +36,16 @@
 a:hover {
     text-decoration: none !important;
 }
+
+.header_btn {
+    padding-top: 6px;
+}
+
+.header_btn li{
+    padding: 0px 6px;
+}
+
+/*Nav*/
 
 .header_nav {
     background-color: #2c2727;

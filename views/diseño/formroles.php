@@ -26,11 +26,6 @@
          
       </form>
 
-      <div class="row d-flex justify-content-center">
-         <!--link redirecciona a una vista con el classs usuario y metodo registro en el archivo usuarioController.php-->
-         <a href="<?=base_url?>usuario/registro" type="button" class="btn btn-outline-success">Registrate aqui</a>
-      </div>         
-      
    <?php else: ?>
 
       <h3 class="text-center letra"><?=$_SESSION['identity']->nombre?> <?=$_SESSION['identity']->apellidos?></h3>
@@ -71,8 +66,8 @@
                                  class="fas fa-user-circle"></i></span>Gestionar productos</a></li>
                      <li><a href="<?=base_url?>categorias/crearcat"><span class="fa-li"><i
                                  class="fas fa-id-badge"></i></span>Gestionar categorias</a></li>
-                     <li><a href="<?=base_url?>pedidos/gestion"><span class="fa-li"><i class="fas fa-user-cog"></i></span>Gestionar Pedidos</a>
-                     </li>
+                     <li><a href="<?=base_url?>pedidos/gestion"><span class="fa-li"><i 
+                                 class="fas fa-user-cog"></i></span>Gestionar Pedidos</a></li>
                   <?php endif; ?>
 
                   <?php if(isset($_SESSION['identity'])): ?>   
@@ -86,5 +81,5 @@
 
 </div>
 
-<!--pedidos y articulos-->
+<!--productos y vistas para ajustes, pedidos y compra.-->
 <div class="col-lg-8">

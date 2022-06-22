@@ -1,5 +1,6 @@
 </div>
 </div>
+</div>
 
 <!--footer-->
 <div class="row">
@@ -11,7 +12,6 @@
          </h3>
       </div>
    </div>
-</div>
 </div>
 
 <!--Boostraps JS-->
