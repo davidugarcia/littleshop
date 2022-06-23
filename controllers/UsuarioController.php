@@ -4,8 +4,13 @@ require_once 'modelo/usuarios.php';
 
 class usuarioController {
 
+  public function cuenta(){
+    //vista del archivo crearcuenta.php
+    require_once "views/usuario/crearcuenta.php";
+  }
+
   public function registro(){
-  //vista del archivo formroles.php
+    //vista del archivo formroles.php
     require_once "views/usuario/registro.php";
   }
 
@@ -47,6 +52,7 @@ class usuarioController {
     echo '<script>window.location= "'.base_url.'usuario/registro"</script>';
     //exit();
   }
+
   public function ingresar(){
 
     if(isset($_POST)){

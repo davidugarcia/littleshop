@@ -31,7 +31,7 @@
          <ul class="header_btn nav">
                <li class="nav-item">    
                   <!--link redirecciona a una vista con el classs usuario y metodo registro en el archivo usuarioController.php-->
-                  <a href="<?=base_url?>usuario/registro" type="button" class="btn btn-outline-info">Inicia sesion</a>
+                  <a href="<?=base_url?>usuario/cuenta" type="button" class="btn btn-outline-info">Inicia sesion</a>
                </li>
 
                <li class="nav-item">    
