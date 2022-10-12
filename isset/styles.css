@@ -20,8 +20,6 @@
     src: url(../isset/Hiroshima\ gyoshi.otf);
 }
 
-
-
 /*header*/
 
 .header_titulo {
@@ -30,7 +28,7 @@
     font-size: 37px;
     text-shadow: 2px 2px 4px #000000;
     text-decoration: none;
-    padding-top: 6px;
+    padding-top: 5px;
 }
 
 a:hover {
@@ -38,11 +36,33 @@ a:hover {
 }
 
 .header_btn {
-    padding-top: 6px;
+    padding-top: 5px;
 }
 
-.header_btn li{
-    padding: 0px 6px;
+.header_btn li {
+    padding: 6px 6px;
+}
+
+/*roles y gestion*/
+
+.btn-group {
+    padding: 5px !important;
+}
+
+.dropdown-menu.show {
+    width: 200px;
+}
+
+.link_aside a {
+    color: #3c4049 !important;
+    border-bottom: 2px solid #117a8b;
+    text-decoration: none!important;
+}
+
+.icono {
+    font-size: 27px;
+    color: #3c4049;
+    padding-right: 4px;
 }
 
 /*Nav*/
@@ -63,26 +83,7 @@ a:hover {
     color: #2c2727;
 }
 
-/*nav*/
-.espacio a {
-    color: #6a2b9a!important;
-}
-
-.bloquesdiv {
-    margin-right: 15px;
-    padding: 5px;
-}
-
-.bloquesdiv a {
-    font-family: "eli0";
-}
-
-.icono {
-    font-size: 27px;
-    color: #1d4165;
-    padding-right: 4px;
-}
-
+/*-----------------------------*/
 .tooltipedu {
     position: relative;
 }
@@ -109,9 +110,16 @@ a:hover {
     visibility: visible;
 }
 
+.bloquesdiv {
+    margin-right: 15px;
+    padding: 5px;
+}
+
+.bloquesdiv a {
+    font-family: "eli0";
+}
 
 /*aside*/
-
 
 /*form*/
 
@@ -132,27 +140,6 @@ a:hover {
     font-weight: bold;
     border-bottom: 2px solid #01B1EA;
 }
-
-
-/*roles y gestion*/
-
-.link_aside {
-    width: 75%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    font-size: 20px;
-    margin-top: 10px;
-}
-
-.link_aside li {
-    padding-bottom: 20px;
-}
-
-.link_aside a {
-    color: #01172d !important;
-    border-bottom: 2px solid #8aafbb;
-    text-decoration: none!important;
-}
-
 
 /*menu central*/
 

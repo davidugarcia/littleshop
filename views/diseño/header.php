@@ -24,25 +24,136 @@
       <header class = "d-flex justify-content-around">
          <div>
             <a href="<?=base_url?>">
-               <h1 class="header_titulo">Shop Shirts</h1>
+               <h1 class="header_titulo">Shirts Shop</h1>
             </a>
          </div>
 
-         <ul class="header_btn nav">
+         <!-- Button trigger modal -->
+         <?php if(!isset($_SESSION['identity'])): ?>
+            <ul class="nav header_btn">
                <li class="nav-item">    
-                  <!--link redirecciona a una vista con el classs usuario y metodo registro en el archivo usuarioController.php-->
-                  <a href="<?=base_url?>usuario/cuenta" type="button" class="btn btn-outline-info">Inicia sesion</a>
-               </li>
+                  <!-- link resgistrate -->
+                  <a href="" type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenterregister">Registrate</a>
+               </li> 
 
                <li class="nav-item">    
-                  <!--link redirecciona a una vista con el classs usuario y metodo registro en el archivo usuarioController.php-->
-                  <a href="<?=base_url?>usuario/registro" type="button" class="btn btn-dark">Registrate</a>
+                  <!-- link inicio sesion -->
+                  <a href="" type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenterloging">Inicia sesion</a>
                </li>
-           </ul>
+            </ul>
+         <?php else: ?>
+            <!-- Opciones gestionar cuenta -->
+            <div class="btn-group">
+               <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Mi cuenta
+               </button>
+
+               <div class="dropdown-menu dropdown-menu-right">               
+                  <div class="link_aside">
+                     <ul class="fa-ul">
+                        <?php if(isset($_SESSION['admin'])): ?>
+                            <li><a href="<?=base_url?>producto/gestionproduct"><span class="fa-li"><i
+                                              class="fas fa-user-circle"></i></span>Gestionar productos</a></li>
+                           <li><a href="<?=base_url?>categorias/crearcat"><span class="fa-li"><i
+                                                class="fas fa-id-badge"></i></span>Gestionar categorias</a></li>
+                           <li><a href="<?=base_url?>pedidos/gestion"><span class="fa-li"><i 
+                                              class="fas fa-user-cog"></i></span>Gestionar Pedidos</a></li>
+                        <?php endif; ?>
+
+                        <?php if(isset($_SESSION['identity'])): ?>   
+                           <li><a href="<?=base_url?>pedidos/mis_pedidos"><span class="fa-li"><i class="fas fa-user-circle"></i></span>Mis pedidos</a></li>
+                           <li><a href="<?=base_url?>usuario/cerrarsesion"><span class="fa-li"><i class="fas fa-times-circle"></i></span>cerrar sesion</a></li>
+                        <?php endif; ?>  
+                     </ul>
+                  </div>    
+               </div>
+            </div>
+          <?php endif; ?>
       </header>
+
+      <!-- Modal Registrate-->
+      <div class="modal fade" id="exampleModalCenterregister" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Registrate</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <form action="<?=base_url?>usuario/guardar" method="POST" style="width:400px">
          
-      <!--nav-->
-      <ul class="header_nav nav justify-content-center">
+                     <div class="form-row">
+                        <div class="form-group col-lg-6">
+                           <label for="user">Nombre</label>
+                           <input type="text" class="form-control is-valid" name="name" value="Eliexer" required>
+                        </div>
+                  
+                        <div class="form-group col-lg-6">
+                           <label for="user">Apellido</label>
+                           <input type="text" class="form-control is-valid" name="lname" value="Urbina" required>
+                        </div>
+                     </div>
+      
+                     <div class="form-group">
+                        <div class="col-lg-12 mb-3">
+                           <label for="email">Correo</label>
+                           <input type="email" class="form-control is-valid" name="email" required>
+                        </div>
+                     </div>
+                  
+                     <div class="form-group">
+                        <div class="col-lg-12">
+                           <label for="pass">Contraseña</label>
+                           <input type="password" class="form-control is-valid" name="pass" value="" required>
+                        </div>
+                     </div>
+      
+                     <button type="submit" class="btn btn-primary">Registrarse</button>
+                  
+                  </form>
+               </div>      
+            </div>
+         </div>
+      </div>
+
+       <!-- Modal Iniciar Sesion-->
+       <div class="modal fade" id="exampleModalCenterloging" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Inicia Sesion</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <form action="<?=base_url?>usuario/ingresar" method="POST">
+
+                     <div class="form-group">
+                        <div class="col-lg-12 mb-3">
+                           <label for="user">Correo</label>
+                           <input type="email" class="form-control is-valid" name="email" value="" required />
+                        </div>
+                     </div>
+
+                     <div class="form-group">
+                        <div class="col-lg-12">
+                           <label for="pass">Contraseña</label>
+                           <input type="password" class="form-control is-valid" name="pass" value="" required />
+                        </div>
+                     </div>
+
+                     <button type="submit" class="btn btn-primary">Ingresar</button>
+                  </form>
+               </div>      
+            </div>
+         </div>
+      </div>
+
+      <!-- Nav Categorias-->
+      <ul class="nav justify-content-center header_nav">
          <?php $categorias =  Utilidades::mostrarcat(); ?>
          <?php while($cat = $categorias->fetch_object()): ?>
          <li class="nav-item header_link">    
